@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
 	<meta charset="UTF-8">
 	<title>Kosta 통신</title>
@@ -35,7 +34,7 @@
 
 		.side-menu {
 			text-align: right;
-			padding: 20px 40px;
+			padding: 20px 40px 0 0;
 		}
 
 		.side-menu a {
@@ -54,8 +53,8 @@
 		}
 
 		.logo img {
-			width: 20px;
-			margin-right: 10px;
+			width: 40px;
+			margin-right: 50px;
 		}
 
 		.menu {
@@ -117,7 +116,8 @@
 			background-position: center;
 			background-size: cover;
 		}
-		.slide-a p{
+
+		.slide-a p {
 			font-size: 52px;
 		}
 
@@ -141,11 +141,13 @@
 			width: 800px;
 			display: inline-block;
 		}
-		.slide-c p{
+
+		.slide-c p {
 			font-size: 40px;
 			color: white;
 
 		}
+
 		.slide-c img {
 			width: 80px;
 			float: right;
@@ -158,7 +160,8 @@
 			background-color: white;
 		}
 
-		.board, .catalog{
+		.board,
+		.catalog {
 			width: 500px;
 			height: 300px;
 			border: 1px solid black;
@@ -189,16 +192,19 @@
 		.wrap-board {
 			display: inline-flex;
 		}
-		.section-business{
+
+		.section-business {
 			background-color: #faf1e0;
 			padding: 60px 0 60px 0;
 			box-sizing: border-box;
 			text-align: center;
 		}
-		.business-wrap{
+
+		.business-wrap {
 			display: inline-flex;
 		}
-		.business{
+
+		.business {
 			width: 300px;
 			height: 300px;
 			background-color: white;
@@ -206,53 +212,78 @@
 			font-size: 30px;
 			position: relative;
 		}
-		.business:first-child{
+
+		.business:first-child {
 			margin-right: 50px;
 		}
-		.business-pic-1{
+
+		.business-pic-1 {
 			width: 100%;
 			height: 200px;
 			background-position: center;
 			background-size: cover;
 			background-image: url('jeongbo.jpg');
 		}
-		.business-pic-2{
+
+		.business-pic-2 {
 			width: 100%;
 			height: 200px;
 			background-position: center;
 			background-size: cover;
 			background-image: url('jeonja.jpg');
 		}
-		.business-text{
+
+		.business-text {
 			padding: 30px 0;
 		}
 
 		.middle {
-		  transition: .5s ease;
-		  opacity: 0;
-		  position: absolute;
-		  top: 50%;
-		  left: 50%;
-		  transform: translate(-50%, -50%);
-		  -ms-transform: translate(-50%, -50%);
-		  text-align: center;
+			transition: .5s ease;
+			opacity: 0;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			-ms-transform: translate(-50%, -50%);
+			text-align: center;
 		}
+
 		.business:hover .business-pic-1 {
-  		opacity: 0.3;
+			opacity: 0.3;
 		}
+
 		.business:hover .business-pic-2 {
-  		opacity: 0.3;
+			opacity: 0.3;
 		}
+
 		.business:hover .business-text {
 			opacity: 0.3;
 		}
+
 		.business:hover .middle {
-		  opacity: 1;
+			opacity: 1;
 		}
-		.text{
+
+		.text {
 			font-size: 20px;
 			word-break: keep-all;
 			line-height: 30px;
+		}
+		footer{
+			padding: 20px 0;
+		}
+		footer img{
+			width: 70px;
+		}
+		.footer-desc{
+			text-align: center;
+			font-size: 14px;
+			color: #9f9f9f;
+		}
+		.footer-image-wrap{
+			text-align: center;
+			color:  #9f9f9f;
+			margin-top: 20px;
 		}
 	</style>
 	<script type="text/javascript" src='jquery.js'></script>
@@ -266,7 +297,7 @@
 			</div>
 			<div class=logo-wrap>
 				<div class='logo'>
-					<img src="logo.png" alt="" />무선통신
+					<img src="logo.png" alt="" />XX통신
 				</div>
 				<div class="menu">
 					<ul>
@@ -322,12 +353,11 @@
 		</div>
 
 		<div class="slide-arrow prev-arrow">
-			<
-		</div>
+			< </div>
 
-		<div class="slide-arrow next-arrow">
-			>
-		</div>
+				<div class="slide-arrow next-arrow">
+					>
+				</div>
 	</section>
 
 	<section class='section-board'>
@@ -373,7 +403,17 @@
 	</section>
 
 	<footer>
+	<div class="wrap">
 
+		<div class="footer-desc">
+			대표이사 이철민 김기찬 장성권 주소 신림동 1630 <br>
+			이 페이지는 과제와 연습을 위해 만들어진 페이지입니다.
+		</div>
+		<div class="footer-image-wrap">
+			<img src="./logo.png" alt="">
+		</div>
+
+	</div>
 	</footer>
 	<script type="text/javascript" src="slick.js"></script>
 	<script type="text/javascript">
@@ -386,9 +426,15 @@
 				autoplaySpeed: 2000,
 			});
 			// $.ajax({
-			// 	type: "POST", url: 'http://kgichan1.cafe24.com/LoginRequest.php',
-			// 	data: {userId: 'woo', userPassword: '1234'},
-			// 	success: function(data){console.log(data)},
+			// 	type: "POST",
+			// 	url: 'http://kgichan1.cafe24.com/LoginRequest.php',
+			// 	data: {
+			// 		userId: 'woo',
+			// 		userPassword: '1234'
+			// 	},
+			// 	success: function(data) {
+			// 		console.log(data)
+			// 	},
 			// 	dataType: 'json'
 			// });
 			// $.ajax({
