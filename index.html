@@ -1,89 +1,218 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<meta charset="UTF-8">
-<title>Kosta 통신</title>
-<link rel="stylesheet"
-	href="//fonts.googleapis.com/earlyaccess/nanumgothic.css">
-<link rel="stylesheet"
-	href="//fonts.googleapis.com/earlyaccess/nanumgothiccoding.css">
-<link rel="stylesheet"
-	href="//fonts.googleapis.com/earlyaccess/nanummyeongjo.css">
-<link rel="stylesheet"
-	href="//fonts.googleapis.com/earlyaccess/nanumbrushscript.css">
-<link rel="stylesheet"
-	href="//fonts.googleapis.com/earlyaccess/nanumpenscript.css">
-<link rel="stylesheet"
-	href="//cdn.jsdelivr.net/font-nanum/1.0/nanumbarungothic/nanumbarungothic.css">
-<style type="text/css">
-* {
-	margin: 0;
-	padding: 0;
-	font-family: 'Nanum Gothic';
-}
+	<meta charset="UTF-8">
+	<title>Kosta 통신</title>
+	<link rel="stylesheet" type="text/css" href="slick.css" />
+	<link href='https://cdn.rawgit.com/openhiun/hangul/14c0f6faa2941116bb53001d6a7dcd5e82300c3f/nanumbarungothic.css' rel='stylesheet' type='text/css'>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+			font-family: 'Nanum Barun Gothic', sans-serif;
+		}
 
-.topbar {
-	width: 100%;
-	background-color: rgb(52, 52, 52);
-	height: 160px;
-}
+		a {
+			text-decoration: none;
+			color: white;
+		}
 
-.side-menu {
-	text-align: right;
-	padding: 20px 40px;
-}
+		a:visited {
+			color: white;
+		}
 
-.side-menu a {
-	font-size: 14px;
-	color: #9f9f9f;
-	text-decoration: none;
-}
+		.topbar-wrap {
+			min-width: 1000px;
+			background-color: rgb(52, 52, 52);
+		}
 
-.logo {
-	display: inline-block;
-	font-size: 35px;
-	color: white;
-	margin-left: 20px;
-	margin-top: 12px;
-}
-.menu{
-	display: inline-block;
-	margin-left: 20px;
-}
-.menu li{
-	display: inline-block;
-	color: white;
-	font-size: 20px;
-	padding: 0 30px;
-	box-sizing: border-box;
-}
-</style>
-<script type="text/javascript" src='jquery.js'></script>
+		.topbar {
+			margin: auto;
+			width: 1000px;
+			height: 120px;
+		}
+
+		.side-menu {
+			text-align: right;
+			padding: 20px 40px;
+		}
+
+		.side-menu a {
+			font-size: 14px;
+			color: #9f9f9f;
+			text-decoration: none;
+			margin: 0 10px;
+		}
+
+		.logo {
+			display: inline-block;
+			font-size: 30px;
+			color: white;
+			margin-left: 20px;
+			margin-top: 5px;
+		}
+
+		.logo img {
+			width: 20px;
+			margin-right: 10px;
+		}
+
+		.menu {
+			display: inline-block;
+			margin-left: 20px;
+		}
+
+		.menu li {
+			display: inline-block;
+			color: white;
+			font-size: 18px;
+			padding: 0 30px;
+			box-sizing: border-box;
+		}
+
+		.menu li a:hover {
+			color: #f4790b;
+		}
+
+		section {
+			position: relative;
+			height: 500px;
+		}
+
+		section>div {
+			height: 100%;
+		}
+
+		.prev-arrow {
+			position: absolute;
+			left: 30px;
+			top: 50%;
+			width: 20px;
+			height: 20px;
+			font-size: 40px;
+		}
+
+		.next-arrow {
+			position: absolute;
+			right: 30px;
+			top: 50%;
+			width: 20px;
+			height: 20px;
+			font-size: 40px;
+		}
+
+		.slide-a,
+		.slide-b,
+		.slide-c {
+			width: 100%;
+			height: 500px;
+			display: table;
+			text-align: center;
+			background-color: lightblue;
+		}
+
+		.inner {
+			display: table-cell;
+			vertical-align: middle;
+			text-align: center;
+		}
+
+		.inner-wrap {
+			width: 800px;
+			display: inline-block;
+		}
+
+		.slide-c img {
+			width: 80px;
+			float: right;
+		}
+	</style>
+	<script type="text/javascript" src='jquery.js'></script>
 </head>
-<body>
-	<div class='topbar'>
-		<div class='side-menu'>
-			<a href="#">마이페이지</a> <a href="#">사이트맵</a> <a href="#">Contact Us</a>
-		</div>
-		<div class=logo-wrap>
-			<div class='logo'>
-				<img src="logo.png" alt="" /> (주)무선통신
-			</div>
-			<div class="menu">
-				<ul>
-					<li>회사소개</li>
-					<li>사업분야</li>
-					<li>제품소개</li>
-					<li>고객센터</li>
-					<li>채용안내</li>
-				</ul>
-			</div>
-		</div>
-		
-		<section>
-		
-		</section>
 
+<body>
+	<div class="topbar-wrap">
+		<div class='topbar'>
+			<div class='side-menu'>
+				<a href="#">마이페이지</a> <a href="#">사이트맵</a> <a href="#">Contact Us</a>
+			</div>
+			<div class=logo-wrap>
+				<div class='logo'>
+					<img src="logo.png" alt="" />무선통신
+				</div>
+				<div class="menu">
+					<ul>
+						<li>
+							<a href="#">회사소개</a>
+						</li>
+						<li>
+							<a href="#">사업분야</a>
+						</li>
+						<li>
+							<a href="#">제품소개</a>
+						</li>
+						<li>
+							<a href="#">고객센터</a>
+						</li>
+						<li>
+							<a href="#">채용안내</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
 	</div>
+
+	<section>
+		<div class="slide-class">
+			<div>
+				<div class="slide-a">
+					<div class="inner">
+						<p>이달의 우수사원 이철민씨</p>
+					</div>
+				</div>
+			</div>
+
+			<div>
+				<div class="slide-b">
+					<div class="inner">
+						<p>이달의 경고사원 장성권</p>
+					</div>
+				</div>
+			</div>
+
+			<div>
+				<div class="slide-c">
+					<div class="inner">
+						<div class='inner-wrap'>
+							<p>허허허</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="slide-arrow prev-arrow">
+			< </div>
+
+				<div class="slide-arrow next-arrow">
+					>
+				</div>
+	</section>
+
+	<script type="text/javascript" src="slick.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$('.slide-class').slick({
+				// dots: true,
+				prevArrow: $('.prev-arrow'),
+				nextArrow: $('.next-arrow'),
+			});
+		});
+	</script>
 </body>
+
+
+
 </html>
