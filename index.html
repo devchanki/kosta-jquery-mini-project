@@ -1,92 +1,484 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>Kosta 통신</title>
-<link rel="stylesheet"
-	href="//fonts.googleapis.com/earlyaccess/nanumgothic.css">
-<link rel="stylesheet"
-	href="//fonts.googleapis.com/earlyaccess/nanumgothiccoding.css">
-<link rel="stylesheet"
-	href="//fonts.googleapis.com/earlyaccess/nanummyeongjo.css">
-<link rel="stylesheet"
-	href="//fonts.googleapis.com/earlyaccess/nanumbrushscript.css">
-<link rel="stylesheet"
-	href="//fonts.googleapis.com/earlyaccess/nanumpenscript.css">
-<link rel="stylesheet"
-	href="//cdn.jsdelivr.net/font-nanum/1.0/nanumbarungothic/nanumbarungothic.css">
-	<link rel="stylesheet" href="./css/normalize.css">
-<link rel="stylesheet" href="./css/main.css">
+	<meta charset="UTF-8">
+	<title>Kosta 통신</title>
+	<link rel="stylesheet" type="text/css" href="slick.css" />
+	<link href='https://cdn.rawgit.com/openhiun/hangul/14c0f6faa2941116bb53001d6a7dcd5e82300c3f/nanumbarungothic.css' rel='stylesheet' type='text/css'>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+			font-family: 'Nanum Barun Gothic', sans-serif;
+		}
 
-<style type="text/css">
-* {
-	margin: 0;
-	padding: 0;
-	font-family: 'Nanum Gothic';
-}
+		a {
+			text-decoration: none;
+			color: white;
+		}
 
-.topbar {
-	width: 100%;
-	background-color: rgb(52, 52, 52);
-	height: 160px;
-}
+		a:visited {
+			color: white;
+		}
 
-.side-menu {
-	text-align: right;
-	padding: 20px 40px;
-}
+		.topbar-wrap {
+			min-width: 1000px;
+			background-color: rgb(52, 52, 52);
+		}
 
-.side-menu a {
-	font-size: 14px;
-	color: #9f9f9f;
-	text-decoration: none;
-}
+		.topbar {
+			margin: auto;
+			width: 1000px;
+			height: 120px;
+		}
 
-.logo {
-	display: inline-block;
-	font-size: 35px;
-	color: white;
-	margin-left: 20px;
-	margin-top: 12px;
-}
-.menu{
-	display: inline-block;
-	margin-left: 20px;
-}
-.menu li{
-	display: inline-block;
-	color: white;
-	font-size: 20px;
-	padding: 0 30px;
-	box-sizing: border-box;
-}
-</style>
-<script type="text/javascript" src='jquery.js'></script>
+		.side-menu {
+			text-align: right;
+			padding: 20px 40px 0 0;
+		}
+
+		.side-menu a {
+			font-size: 14px;
+			color: #9f9f9f;
+			text-decoration: none;
+			margin: 0 10px;
+		}
+
+		.logo {
+			display: inline-block;
+			font-size: 30px;
+			color: white;
+			margin-left: 20px;
+			margin-top: 5px;
+		}
+
+		.logo img {
+			width: 40px;
+			margin-right: 50px;
+		}
+
+		.menu {
+			display: inline-block;
+			margin-left: 20px;
+		}
+
+		.menu li {
+			display: inline-block;
+			color: white;
+			font-size: 18px;
+			padding: 0 30px;
+			box-sizing: border-box;
+		}
+
+		.menu li a:hover {
+			color: #f4790b;
+		}
+
+		.sliding {
+			position: relative;
+			height: 500px;
+		}
+
+		.sliding>div {
+			height: 100%;
+		}
+
+		.prev-arrow {
+			position: absolute;
+			left: 30px;
+			top: 50%;
+			width: 20px;
+			height: 20px;
+			font-size: 40px;
+		}
+
+		.next-arrow {
+			position: absolute;
+			right: 30px;
+			top: 50%;
+			width: 20px;
+			height: 20px;
+			font-size: 40px;
+		}
+
+		.slide-a,
+		.slide-b,
+		.slide-c {
+			width: 100%;
+			height: 500px;
+			display: table;
+			text-align: center;
+		}
+
+		.slide-a {
+			background-color: #00b9f1;
+			background-image: url('congrat.png');
+			background-position: center;
+			background-size: cover;
+		}
+
+		.slide-a p {
+			font-size: 52px;
+		}
+
+		.slide-b {
+			background-color: #7200da;
+		}
+
+		.slide-c {
+			background-image: url('money.jpg');
+			background-position: center;
+			background-size: cover;
+		}
+
+		.inner {
+			display: table-cell;
+			vertical-align: middle;
+			text-align: center;
+		}
+
+		.inner-wrap {
+			width: 800px;
+			display: inline-block;
+		}
+
+		.slide-c p {
+			font-size: 40px;
+			color: white;
+
+		}
+
+		.slide-c img {
+			width: 80px;
+			float: right;
+		}
+
+		.section-board {
+			text-align: center;
+			padding: 40px 0 60px 0;
+			box-sizing: border-box;
+			background-color: white;
+		}
+
+		.board,
+		.catalog {
+			width: 500px;
+			height: 300px;
+			border: 1px solid black;
+			display: inline-block;
+			margin-right: 50px;
+			box-sizing: border-box;
+			padding: 10px 10px;
+			text-align: justify;
+			overflow: scroll;
+		}
+
+		.title {
+			font-size: 25px;
+			padding: 20px 0;
+		}
+
+		footer {
+			width: 100%;
+			height: 200px;
+			background-color: rgb(52, 52, 52);
+		}
+
+		.board-data {
+			padding: 5px 5px;
+			border: 1px solid black;
+		}
+
+		.wrap-board {
+			display: inline-flex;
+		}
+
+		.section-business {
+			background-color: #faf1e0;
+			padding: 60px 0 60px 0;
+			box-sizing: border-box;
+			text-align: center;
+		}
+
+		.business-wrap {
+			display: inline-flex;
+		}
+
+		.business {
+			width: 300px;
+			height: 300px;
+			background-color: white;
+			text-align: center;
+			font-size: 30px;
+			position: relative;
+		}
+
+		.business:first-child {
+			margin-right: 50px;
+		}
+
+		.business-pic-1 {
+			width: 100%;
+			height: 200px;
+			background-position: center;
+			background-size: cover;
+			background-image: url('jeongbo.jpg');
+		}
+
+		.business-pic-2 {
+			width: 100%;
+			height: 200px;
+			background-position: center;
+			background-size: cover;
+			background-image: url('jeonja.jpg');
+		}
+
+		.business-text {
+			padding: 30px 0;
+		}
+
+		.middle {
+			transition: .5s ease;
+			opacity: 0;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			-ms-transform: translate(-50%, -50%);
+			text-align: center;
+		}
+
+		.business:hover .business-pic-1 {
+			opacity: 0.3;
+		}
+
+		.business:hover .business-pic-2 {
+			opacity: 0.3;
+		}
+
+		.business:hover .business-text {
+			opacity: 0.3;
+		}
+
+		.business:hover .middle {
+			opacity: 1;
+		}
+
+		.text {
+			font-size: 20px;
+			word-break: keep-all;
+			line-height: 30px;
+		}
+		footer{
+			padding: 20px 0;
+		}
+		footer img{
+			width: 70px;
+		}
+		.footer-desc{
+			text-align: center;
+			font-size: 14px;
+			color: #9f9f9f;
+		}
+		.footer-image-wrap{
+			text-align: center;
+			color:  #9f9f9f;
+			margin-top: 20px;
+		}
+	</style>
+	<script type="text/javascript" src='jquery.js'></script>
 </head>
+
 <body>
-	<div class='topbar'>
-		<div class='side-menu'>
-			<a href="#">마이페이지</a> <a href="#">사이트맵</a> <a href="#">Contact Us</a>
-		</div>
-		<div class=logo-wrap>
-			<div class='logo'>
-				<img src="logo.png" alt="" /> (주)무선통신
+	<div class="topbar-wrap">
+		<div class='topbar'>
+			<div class='side-menu'>
+				<a href="#">마이페이지</a> <a href="#">사이트맵</a> <a href="#">Contact Us</a>
 			</div>
-			<div class="menu">
-				<ul>
-					<li>회사소개</li>
-					<li>사업분야</li>
-					<li>제품소개</li>
-					<li>고객센터</li>
-					<li>채용안내</li>
-				</ul>
+			<div class=logo-wrap>
+				<div class='logo'>
+					<img src="logo.png" alt="" />XX통신
+				</div>
+				<div class="menu">
+					<ul>
+						<li>
+							<a href="#">회사소개</a>
+						</li>
+						<li>
+							<a href="#">회사 연혁</a>
+						</li>
+						<li>
+							<a href="#">제품소개</a>
+						</li>
+						<li>
+							<a href="#">고객센터</a>
+						</li>
+						<li>
+							<a href="#">채용안내</a>
+						</li>
+					</ul>
+				</div>
 			</div>
 		</div>
-		
-		<section>
-		
-		</section>
+	</div>
+
+	<section class="sliding">
+		<div class="slide-class">
+			<div>
+				<div class="slide-a">
+					<div class="inner">
+						<p>이달의 우수사원 이철민</p>
+					</div>
+				</div>
+			</div>
+
+			<div>
+				<div class="slide-b">
+					<div class="inner">
+						<p>이달의 경고사원 장성권</p>
+					</div>
+				</div>
+			</div>
+
+			<div>
+				<div class="slide-c">
+					<div class="inner">
+						<div class='inner-wrap'>
+							<p>고액 투자자 정 지운</p>
+							<p>님의 투자에 감사드립니다.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="slide-arrow prev-arrow">
+			< </div>
+
+				<div class="slide-arrow next-arrow">
+					>
+				</div>
+	</section>
+
+	<section class='section-board'>
+		<div class="title">
+			공지사항 / Catalog
+		</div>
+		<div class="wrap-board">
+			<div class="board">
+
+			</div>
+			<div class="catalog">
+
+			</div>
+		</div>
+	</section>
+
+	<section class='section-business'>
+		<div class="title">
+			사업 분야
+		</div>
+		<div class="business-wrap">
+			<div class="business">
+				<div class="business-pic-1">
+				</div>
+				<div class="business-text">
+					정보통신
+				</div>
+				<div class="middle">
+					<div class="text">정보통신 기술과 <br> 그 성과를 만나볼 수 있습니다.</div>
+				</div>
+			</div>
+			<div class="business">
+				<div class="business-pic-2">
+				</div>
+				<div class="business-text">
+					전자
+				</div>
+				<div class="middle">
+					<div class="text">전자사업분야의 기술력으로<br> 해외시장을 개척합니다.</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<footer>
+	<div class="wrap">
+
+		<div class="footer-desc">
+			대표이사 이철민 김기찬 장성권 주소 신림동 1630 <br>
+			이 페이지는 과제와 연습을 위해 만들어진 페이지입니다.
+		</div>
+		<div class="footer-image-wrap">
+			<img src="./logo.png" alt="">
+		</div>
 
 	</div>
+	</footer>
+	<script type="text/javascript" src="slick.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$('.slide-class').slick({
+				// dots: true,
+				prevArrow: $('.prev-arrow'),
+				nextArrow: $('.next-arrow'),
+				autoplay: true,
+				autoplaySpeed: 2000,
+			});
+			// $.ajax({
+			// 	type: "POST",
+			// 	url: 'http://kgichan1.cafe24.com/LoginRequest.php',
+			// 	data: {
+			// 		userId: 'woo',
+			// 		userPassword: '1234'
+			// 	},
+			// 	success: function(data) {
+			// 		console.log(data)
+			// 	},
+			// 	dataType: 'json'
+			// });
+			// $.ajax({
+			// 	type: "POST",
+			// 	url: 'http://kgichan1.cafe24.com/showBoardKosta.php',
+			// 	dataType: 'json',
+			// 	success: function(datas) {
+			// 		var num = 0;
+			// 		console.log(datas);
+			// 		for (var i of datas) {
+			// 			if (++num == 10) {
+			// 				break;
+			// 			}
+			// 			var html = '<div class="board-data">'
+			// 			html += i.content;
+			// 			html += "</div>"
+			// 			$('.board').append(html);
+			// 		}
+			// 	}
+			// })
+			//
+			// $.ajax({
+			// 	type: "POST",
+			// 	url: 'http://kgichan1.cafe24.com/kostaCatalog.php',
+			// 	dataType: 'json',
+			// 	success: function(datas) {
+			// 		var num = 0;
+			// 		console.log(datas);
+			// 		for (var i of datas) {
+			// 			if (++num == 10) {
+			// 				break;
+			// 			}
+			// 			var html = '<div class="board-data">'
+			// 			html += '제품명: ' + i.name;
+			// 			html += ', 효과: ' + i.desc;
+			// 			html += "</div>"
+			// 			$('.catalog').append(html);
+			// 		}
+			// 	}
+			// })
+		});
+	</script>
 </body>
+
+
+
 </html>

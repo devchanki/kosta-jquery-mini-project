@@ -15,13 +15,16 @@
     opacity: 80%;
 }
 #sloganmain{
-	text-align: center;
+	position: absolute;
+
 }
 #slogan1{
+	padding:60px 30px 0px 60px;
 	width:50%;
+	position:relative;
+	float:left;
 	font-family: 'Nanum Gothic';
 	box-sizing: border-box;
-	display: inline-block;
 }
 
 #slogan2{
@@ -36,10 +39,8 @@
 .sloganTitle{
 	background-size : 21px;
 	float: left;
+
 }	
-.slogantitle{
-	text-align: justify;
-}
 .title{
 	font-size: 24px;
 	position: absolute;
@@ -65,7 +66,6 @@
 	line-height :28px;
 	font-family: "Nanum Gothic";
 	color: #666;
-	text-align: justify;
 }
 	/* .introtitle{
 		position: relative;	
@@ -197,9 +197,7 @@
 	color: #222;
 	cursor: pointer;
 	border-right: 1px dashed #333;
-}
-.quick1-none{
-	border-right: none !important;
+
 }
 .quick1 img{
 	position: relative;
@@ -226,13 +224,12 @@
 	text-align: center;
 	margin : 0;
 }
-
 .quick4{
 	position: relative;
 	float: left;
 	min-height: 182px;
 	width: 269px;
-	text-align: center;	
+	text-align: center;
 }
 .quick4 a{
 	display: block;
