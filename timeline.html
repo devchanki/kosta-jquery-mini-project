@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="timeline.css" />
+<link rel="stylesheet" type="text/css" href="timeline-theme.css" />
+<link href='https://cdn.rawgit.com/openhiun/hangul/14c0f6faa2941116bb53001d6a7dcd5e82300c3f/nanumbarungothic.css' rel='stylesheet' type='text/css'>
+<style type="text/css">
+* {
+	margin: 0;
+	padding: 0;
+	font-family: 'Nanum Barun Gothic', sans-serif;
+}
+
+body{
+	background: black;
+}
+
+.topbar-wrap a {
+	text-decoration: none;
+	color: white;
+}
+
+.topbar-wrap a:visited {
+	color: white;
+}
+
+.topbar-wrap {
+	min-width: 1000px;
+	background-color: rgb(52, 52, 52);
+}
+
+.topbar {
+	margin: auto;
+	width: 1000px;
+	height: 120px;
+}
+
+.side-menu {
+	text-align: right;
+	padding: 20px 40px;
+}
+
+.side-menu a {
+	font-size: 14px;
+	color: #9f9f9f;
+	text-decoration: none;
+	margin: 0 10px;
+}
+
+.logo {
+	display: inline-block;
+	font-size: 30px;
+	color: white;
+	margin-left: 20px;
+	margin-top: 5px;
+}
+
+.logo img {
+	width: 20px;
+	height: 20px;
+	margin-right: 10px;
+}
+
+.menu {
+	display: inline-block;
+	margin-left: 20px;
+}
+
+.menu li {
+	display: inline-block;
+	color: white;
+	font-size: 18px;
+	padding: 0 30px;
+	box-sizing: border-box;
+}
+
+.menu li a:hover {
+	color: #f4790b;
+}
+
+.timeline>div {
+	height: 600px;
+	width: 1000px;
+}
+
+.con-img {
+	top: 300px;
+	width: 500px;
+	height: 500px;
+	display: inline-block;
+	float: left;
+}
+
+div img {
+	top: 300px;
+	width: 500px;
+	height: 500px;
+	display: inline-block;
+}
+
+.content {
+	color: white;
+	font-size: 20px;
+	padding-left : 10px;
+	top: 200px;
+	width: 400px;
+	height: 500px;
+	display: inline-block;
+	text-align: left;
+	padding-left: 10px;
+}
+
+.slick-dots {
+	position: absolute;
+	display: flex;
+	align-content: center;
+}
+
+.timeline-wrap {
+	width: 1000px;
+	padding-top: 100px;
+	margin: auto;
+	text-align: center;
+	margin: auto;
+}
+</style>
+</head>
+<body>
+	<div class="topbar-wrap">
+		<div class='topbar'>
+			<div class='side-menu'>
+				<a href="#">마이페이지</a> <a href="#">사이트맵</a> <a href="#">Contact
+					Us</a>
+			</div>
+			<div class=logo-wrap>
+				<div class='logo'>
+					<img src="logo.png" alt="" />무선통신
+				</div>
+				<div class="menu">
+					<ul>
+						<li><a href="#">회사소개</a></li>
+						<li><a href="#">사업분야</a></li>
+						<li><a href="#">제품소개</a></li>
+						<li><a href="#">고객센터</a></li>
+						<li><a href="#">채용안내</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="timeline-wrap">
+		<div class="timeline">
+			<div class="contents">
+				<div class="con-img">
+					<img class="peng" src="http://uljinnews.com/upload/editor/1178597557.gm" alt="근본">
+				</div>
+				<div class="content">1974년<br><br>응가전업사 창업<br><br><br>1990년<br><br>(주) 응가통신 설립</div>
+			</div>
+			<div class="contents">
+				<div class="con-img">
+					<img class="peng" src="img_telco_ref_2.jpg" alt="penguins">
+				</div>
+				<div class="content">1997년<br><br>이동통신사업자 전송로공사부문 진출<br><br><br>2000년<br><br>전기공사업 등록	</div>
+			</div>
+			<div class="contents">
+				<div class="con-img">
+					<img class="peng" src="img_telco_ref_3.jpg" alt="penguins">
+				</div>
+				<div class="content">2001년<br><br>(주)응가통신 신사옥 준공, 이전<br>(주)응가통신 동해영업소 개소<br>대표이사 변경 (장성권 대표이사 취임)<br><br></div>
+			</div>
+			<div class="contents">
+				<div class="con-img">
+					<img class="peng" src="img_telco_ref_4.jpg" alt="penguins">
+				</div>
+				<div class="content">2004년<br><br>ISO 9001인증 획득(인증번호 JK-1482)<br><br><br>2020년<br><br>발전없음 망해감</div>
+			</div>
+		</div>
+	</div>
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+	<script type="text/javascript" src="slick.js"></script>
+	<script type="text/javascript" src="slick.min.js"></script>
+	<script type="text/javascript">
+		$(function() {
+			$slider = $(".timeline");
+			$slider.on('init', (mouseWheel($slider))).slick({
+				dots : true,
+				infinite : true,
+				speed : 500,
+				cssEase : 'linear'
+			});
+
+		function mouseWheel($slider) {
+			$(window).on('wheel', {
+				$slider : $slider
+			}, mouseWheelHandler)
+		}
+		function mouseWheelHandler(event) {
+			event.preventDefault()
+			const $slider = event.data.$slider
+			const delta = event.originalEvent.deltaY
+			if (delta > 0) {
+				$slider.slick('slickNext')
+			} else {
+				$slider.slick('slickPrev')
+			}
+		}})
+	</script>
+</body>
+</html>
