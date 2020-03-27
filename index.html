@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<meta charset="UTF-8">
 	<title>Kosta 통신</title>
@@ -269,20 +270,24 @@
 			word-break: keep-all;
 			line-height: 30px;
 		}
-		footer{
+
+		footer {
 			padding: 20px 0;
 		}
-		footer img{
+
+		footer img {
 			width: 70px;
 		}
-		.footer-desc{
+
+		.footer-desc {
 			text-align: center;
 			font-size: 14px;
 			color: #9f9f9f;
 		}
-		.footer-image-wrap{
+
+		.footer-image-wrap {
 			text-align: center;
-			color:  #9f9f9f;
+			color: #9f9f9f;
 			margin-top: 20px;
 		}
 	</style>
@@ -293,7 +298,7 @@
 	<div class="topbar-wrap">
 		<div class='topbar'>
 			<div class='side-menu'>
-				<a href="#">마이페이지</a> <a href="#">사이트맵</a> <a href="#">Contact Us</a>
+				<a href="mypage.html">마이페이지</a> <a href="#">사이트맵</a> <a href="#">Contact Us</a>
 			</div>
 			<div class=logo-wrap>
 				<div class='logo'>
@@ -302,16 +307,16 @@
 				<div class="menu">
 					<ul>
 						<li>
-							<a href="#">회사소개</a>
+							<a href="introduction.html">회사소개</a>
 						</li>
 						<li>
-							<a href="#">회사 연혁</a>
+							<a href="timeline.html">회사 연혁</a>
 						</li>
 						<li>
 							<a href="#">제품소개</a>
 						</li>
 						<li>
-							<a href="#">고객센터</a>
+							<a href="contact.html">고객센터</a>
 						</li>
 						<li>
 							<a href="#">채용안내</a>
@@ -403,17 +408,17 @@
 	</section>
 
 	<footer>
-	<div class="wrap">
+		<div class="wrap">
 
-		<div class="footer-desc">
-			대표이사 이철민 김기찬 장성권 주소 신림동 1630 <br>
-			이 페이지는 과제와 연습을 위해 만들어진 페이지입니다.
-		</div>
-		<div class="footer-image-wrap">
-			<img src="./logo.png" alt="">
-		</div>
+			<div class="footer-desc">
+				대표이사 이철민 김기찬 장성권 주소 신림동 1630 <br>
+				이 페이지는 과제와 연습을 위해 만들어진 페이지입니다.
+			</div>
+			<div class="footer-image-wrap">
+				<img src="./logo.png" alt="">
+			</div>
 
-	</div>
+		</div>
 	</footer>
 	<script type="text/javascript" src="slick.js"></script>
 	<script type="text/javascript">
@@ -425,60 +430,46 @@
 				autoplay: true,
 				autoplaySpeed: 2000,
 			});
-			// $.ajax({
-			// 	type: "POST",
-			// 	url: 'http://kgichan1.cafe24.com/LoginRequest.php',
-			// 	data: {
-			// 		userId: 'woo',
-			// 		userPassword: '1234'
-			// 	},
-			// 	success: function(data) {
-			// 		console.log(data)
-			// 	},
-			// 	dataType: 'json'
-			// });
-			// $.ajax({
-			// 	type: "POST",
-			// 	url: 'http://kgichan1.cafe24.com/showBoardKosta.php',
-			// 	dataType: 'json',
-			// 	success: function(datas) {
-			// 		var num = 0;
-			// 		console.log(datas);
-			// 		for (var i of datas) {
-			// 			if (++num == 10) {
-			// 				break;
-			// 			}
-			// 			var html = '<div class="board-data">'
-			// 			html += i.content;
-			// 			html += "</div>"
-			// 			$('.board').append(html);
-			// 		}
-			// 	}
-			// })
-			//
-			// $.ajax({
-			// 	type: "POST",
-			// 	url: 'http://kgichan1.cafe24.com/kostaCatalog.php',
-			// 	dataType: 'json',
-			// 	success: function(datas) {
-			// 		var num = 0;
-			// 		console.log(datas);
-			// 		for (var i of datas) {
-			// 			if (++num == 10) {
-			// 				break;
-			// 			}
-			// 			var html = '<div class="board-data">'
-			// 			html += '제품명: ' + i.name;
-			// 			html += ', 효과: ' + i.desc;
-			// 			html += "</div>"
-			// 			$('.catalog').append(html);
-			// 		}
-			// 	}
-			// })
+			$.ajax({
+				type: "POST",
+				url: 'http://kgichan1.cafe24.com/showBoardKosta.php',
+				dataType: 'json',
+				success: function(datas) {
+					var num = 0;
+					console.log(datas);
+					for (var i of datas) {
+						if (++num == 10) {
+							break;
+						}
+						var html = '<div class="board-data">'
+						html += i.content;
+						html += "</div>"
+						$('.board').append(html);
+					}
+				}
+			})
+
+			$.ajax({
+				type: "POST",
+				url: 'http://kgichan1.cafe24.com/kostaCatalog.php',
+				dataType: 'json',
+				success: function(datas) {
+					var num = 0;
+					console.log(datas);
+					for (var i of datas) {
+						if (++num == 10) {
+							break;
+						}
+						var html = '<div class="board-data">'
+						html += '제품명: ' + i.name;
+						html += ', 효과: ' + i.desc;
+						html += "</div>"
+						$('.catalog').append(html);
+					}
+				}
+			})
 		});
 	</script>
 </body>
-
-
 
 </html>
