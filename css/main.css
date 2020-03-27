@@ -7,15 +7,18 @@
 	font-family: 'Nanum Gothic';
 }
 
+
 .slideshow {
     background-color: rgb(0, 0, 0);
     height: 560px;
     overflow: hidden;
     position: relative;
     opacity: 80%;
+    min-width: 1424px;
 }
 #sloganmain{
 	text-align: center;
+	min-width:1424px;
 }
 #slogan1{
 	width:50%;
