@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script
+  src="https://code.jquery.com/jquery-1.12.4.min.js"
+  integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
+  crossorigin="anonymous"></script>
+<link
+	href='https://cdn.rawgit.com/openhiun/hangul/14c0f6faa2941116bb53001d6a7dcd5e82300c3f/nanumbarungothic.css'
+	rel='stylesheet' type='text/css'>
+<style type="text/css">
+* {
+	margin: 0;
+	padding: 0;
+	font-family: 'Arial', 'nbgr', 'Nanum Barun Gothic', sans-serif;
+}
+
+.topbar-wrap a {
+	text-decoration: none;
+	color: white;
+}
+
+.topbar-wrap a:visited {
+	color: white;
+}
+
+.topbar-wrap {
+	min-width: 1000px;
+	background-color: rgb(52, 52, 52);
+}
+
+.topbar {
+	margin: auto;
+	width: 1000px;
+	height: 120px;
+}
+
+.side-menu {
+	text-align: right;
+	padding: 20px 40px;
+}
+
+.side-menu a {
+	font-size: 14px;
+	color: #9f9f9f;
+	text-decoration: none;
+	margin: 0 10px;
+}
+
+.logo {
+	display: inline-block;
+	font-size: 30px;
+	color: white;
+	margin-left: 20px;
+	margin-top: 5px;
+}
+
+.logo img {
+	width: 20px;
+	height: 20px;
+	margin-right: 10px;
+}
+
+.menu {
+	display: inline-block;
+	margin-left: 20px;
+}
+
+.menu li {
+	display: inline-block;
+	color: white;
+	font-size: 18px;
+	padding: 0 30px;
+	box-sizing: border-box;
+}
+
+.menu li a:hover {
+	color: #f4790b;
+}
+
+.service-center {
+	padding: 75px 0px 0px;
+}
+
+.sc-h1 {
+	font-size: 48px;
+	font-weight: normal;
+	line-height: 48px;
+	display: block;
+	text-align: center;
+}
+
+.sc-p {
+	font-size: 16px;
+	font-weight: normal;
+	line-height: 16px;
+	display: block;
+	text-align: center;
+	padding: 30px 0px 0px;
+}
+
+.cjfals {
+	background: #f8f8f8;
+	padding: 22px 20px 21px 40px;
+	text-align: left;
+	vertical-align: top;
+	font-weight: normal;
+	font-size: 14px;
+	border-bottom: 1px solid #ddd;
+	width: 182px;
+	vertical-align: middle;
+}
+
+.sc-wrap{
+	border-top: 1px solid #222;
+
+}
+
+
+.sc-thead{
+	margin: 30px;
+}
+
+td{
+	color: #55555;
+	border-bottom: 1px solid #ddd;
+	padding: 15px 20px;
+	display: table-cell;
+	border-collapse: collapse;
+	line-height: 24px;
+	width: 702px;
+}
+.input_txt{
+	cursor: text;
+	display: block;
+	padding: 0 15px;
+	word-spacing: normal;
+	text-transform: none;
+	text-indent: 0px;
+	text-shadow: none;
+	vertical-align: top;
+	width: 88px;
+}
+
+.table-wrap{
+	padding-top: 60px;
+	display: block;
+	max-width: 984px;
+	min-width: 984px;
+	position: relative;
+	margin: 0 auto;
+	padding-bottom: 80px;
+	line-height: 24px;
+}
+
+.inp{
+	width: 400px;
+	height: 150px;
+}
+
+.btn{
+	background: #333;
+	color: #fff;
+	min-width: 140px;
+	display: inline-block;
+	margin: 0 3px;
+	padding: 0 15px;
+	border: 1px solid #333;
+	border-radius: 3px;
+	text-align: center;
+	line-height: 24px;
+	vertical-align: middle;
+	cursor: pointer;
+	overflow: visible;
+	white-space: nowrap;	
+	font-size: 14px;
+	float: right;
+
+}
+
+.sc-info{
+	position:relative;
+	margin-top: 80px;
+	padding-bottom: 23px;
+	padding-left: 30px;
+	min-height: 1%;
+	background-color: #f8f8f8;
+	display: block;
+	color: #555;
+	font-size: 14px;
+	line-height: 24px;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    clear: both;
+    margin-top: 70px;
+    
+}
+
+.sc-info_aa{
+	font-weight: bold;
+	font-size: 16px;
+	padding-left: 10px;
+}
+
+#sunday{
+	color: red;
+}
+
+.sc-info p{
+	font-weight: bold;
+	font-size: 25px;
+}
+
+#rlcks{
+	padding-top: 30px;
+}
+
+.sc-info_list{
+	padding-top: 20px;
+}
+
+#c-img{
+	width: 35px;
+	height: 25px;
+}
+
+
+</style>
+</head>
+<body>
+	<div class="topbar-wrap">
+		<div class='topbar'>
+			<div class='side-menu'>
+				<a href="#">마이페이지</a> <a href="#">사이트맵</a> <a href="#">Contact
+					Us</a>
+			</div>
+			<div class=logo-wrap>
+				<div class='logo'>
+					<img src="logo.png" alt="" />무선통신
+				</div>
+				<div class="menu">
+					<ul>
+						<li><a href="#">회사소개</a></li>
+						<li><a href="#">사업분야</a></li>
+						<li><a href="#">제품소개</a></li>
+						<li><a href="#">고객센터</a></li>
+						<li><a href="#">채용안내</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="service-center">
+		<h1 class="sc-h1">고 객 센 터</h1>
+		<p class="sc-p">문의 해 볼테면 해 보시죠.</p>
+	</div>
+
+<div class="table-wrap">
+		<div class="sc-thead">
+			<h2 class="sc-h2">문의정보</h2>
+		</div>
+	
+	<div class="sc-wrap">		
+		<div class="sc-table">
+			<form>
+				<table>
+					<tbody id="sc-tbody">
+						<tr class="writer">
+							<th scope="row" class="cjfals"><label> 이름</label></th>
+							<td><span class="input_txt"> <input type="text"
+									name='name' placeholder="이름을 입력해주세요.">
+							</span></td>
+						</tr>
+						<tr class="title">
+							<th scope="row" class="cjfals"><label> 제목</label></th>
+							<td><span class="input_txt"> <input type="text"
+								name='title'	 placeholder="제목을 입력해주세요.">
+							</span></td>
+						</tr>
+						<tr class="contents">
+							<th scope="row" class="cjfals"><label> 문의내용</label></th>
+							<td><span class="input_txt"><input type="text" class="inp" 
+								name='contents'	placeholder="문의하실 내용을 입력해 주세요.">
+								</span></td>
+						</tr>
+					</tbody>
+				</table>
+				<input type="submit" class="btn" value="저장">
+			</form>	
+		</div>
+		</div>
+		
+		<div class="sc-info">
+			<div id = "rlcks">
+				<p><img id="c-img" src="https://media.istockphoto.com/vectors/phone-icon-vector-illustration-call-center-app-telephone-icons-trendy-vector-id1159701264">
+				전화 112</p>
+				<ul class="sc-info_list">
+					<li class="sc-info_aa">평일 : 오전 9시 ~ 오전 10시</li>
+					<li class="sc-info_aa"><span>토 · </span>
+														<span id="sunday">일</span>
+														<span> · 공휴일  :  휴무</span></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	
+<script type="text/javascript">
+
+	$(function() {
+		$('form').submit(function() {
+			console.log($(this).serialize());
+			$.ajax({
+				url : 'http://kgichan1.cafe24.com/kostaUpdate.php',
+				type : 'post',
+				data : $(this).serialize(),
+				success : function(data) {
+					alert('성공적으로 저장 되었습니다.')
+					window.location.reload()
+				} 
+			});
+			return false;
+		})
+	});
+    
+</script>
+</body>
+</html>
