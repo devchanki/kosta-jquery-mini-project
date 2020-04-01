@@ -1,153 +1,150 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>jQuery UI Accordion - Default functionality</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>jQuery UI Accordion - Default functionality</title>
   <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-  <link rel="stylesheet"
-	href="./jquery-ui/jquery-ui.css">
-<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-<script src="./jquery-ui/jquery-ui.js"></script>
+  <link rel="stylesheet" href="./jquery-ui/jquery-ui.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="./jquery-ui/jquery-ui.js"></script>
   <script>
 
   </script>
-<style>
-* {
-	margin: 0;
-	padding: 0;
-/* 	font-family: 'Nanum Barun Gothic', sans-serif; */
-}
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      /* 	font-family: 'Nanum Barun Gothic', sans-serif; */
+    }
 
-a {
-	text-decoration: none;
-	color: white;
-}
+    a {
+      text-decoration: none;
+      color: white;
+    }
 
-a:visited {
-	color: white;
-}
+    a:visited {
+      color: white;
+    }
 
-.topbar-wrap {
-	min-width: 1000px;
-	background-color: rgb(52, 52, 52);
-}
+    .topbar-wrap {
+      min-width: 1000px;
+      background-color: rgb(52, 52, 52);
+    }
 
-.topbar {
-	margin: auto;
-	width: 1000px;
-	height: 120px;
-}
+    .topbar {
+      margin: auto;
+      width: 1000px;
+      height: 120px;
+    }
 
-.side-menu {
-	text-align: right;
-	padding: 20px 40px 0 0;
-}
+    .side-menu {
+      text-align: right;
+      padding: 20px 40px 0 0;
+    }
 
-.side-menu a {
-	font-size: 14px;
-	color: #9f9f9f;
-	text-decoration: none;
-	margin: 0 10px;
-}
+    .side-menu a {
+      font-size: 14px;
+      color: #9f9f9f;
+      text-decoration: none;
+      margin: 0 10px;
+    }
 
-.logo {
-	display: inline-block;
-	font-size: 30px;
-	color: white;
-	margin-left: 20px;
-	margin-top: 5px;
-}
+    .logo {
+      display: inline-block;
+      font-size: 30px;
+      color: white;
+      margin-left: 20px;
+      margin-top: 5px;
+    }
 
-.logo img {
-	width: 40px;
-	margin-right: 50px;
-}
+    .logo img {
+      width: 40px;
+      margin-right: 50px;
+    }
 
-.menu {
-	display: inline-block;
-	margin-left: 20px;
-}
+    .menu {
+      display: inline-block;
+      margin-left: 20px;
+    }
 
-.menu li {
-	display: inline-block;
-	color: white;
-	font-size: 18px;
-	padding: 0 30px;
-	box-sizing: border-box;
-}
+    .menu li {
+      display: inline-block;
+      color: white;
+      font-size: 18px;
+      padding: 0 30px;
+      box-sizing: border-box;
+    }
 
-.menu li a:hover {
-	color: #f4790b;
-}
+    .menu li a:hover {
+      color: #f4790b;
+    }
 
-.area1 {
-	height: 400px;
-	text-align: center;
-	font-size: 30px;
-	padding-top: 180px;
-	box-sizing: border-box;
-	padding-top: 180px;
-	box-sizing: border-box;
-	background-color: #e6e2df;
-}
+    .area1 {
+      height: 400px;
+      text-align: center;
+      font-size: 30px;
+      padding-top: 180px;
+      box-sizing: border-box;
+      padding-top: 180px;
+      box-sizing: border-box;
+      background-color: #e6e2df;
+    }
 
-.board-wrap {
-	padding: 40px 0;
-	box-sizing: border-box;
-}
+    .board-wrap {
+      padding: 40px 0;
+      box-sizing: border-box;
+    }
 
-.board {
-	width: 80%;
-	border: 1px solid black;
-	padding: 0 20px;
-	box-sizing: border-box;
-	margin: auto;
-	min-height: 300px;
-	max-height: 800px;
-	overflow: scroll;
-}
+    .board {
+      width: 80%;
+      border: 1px solid black;
+      padding: 0 20px;
+      box-sizing: border-box;
+      margin: auto;
+      min-height: 300px;
+      max-height: 800px;
+      overflow: scroll;
+    }
 
-.board-data {
-	padding: 5px 5px;
-	border: 1px solid black;
-}
-</style>
+    .board-data {
+      padding: 5px 5px;
+      border: 1px solid black;
+    }
+  </style>
 
-<title>Insert title here</title>
+  <title>Insert title here</title>
 
-<script type="text/javascript">
-		$(document).ready(function() {
-$.ajax({
-	type: "POST",
-url: 'http://kgichan1.cafe24.com/kostaShow.php',
-dataType: 'json',
- 	success: function(datas) {
- 		var num = 0;
- 		console.log(datas);
- 		 	for (var i of datas) {
- 			if (++num == 10) {
- 				break;
- 			}
- 			var html = "<h3>"+ i.title + "</h3>";
- 			html += '<div class="board-data">'
- 			html += "작성시간:"+ i.time +'<br>'+ "내용:" + i.contents;
- 			html += "</div>"
- 			$('#accordion').append(html);
-		}
- 		 	 $( "#accordion" ).accordion();
- 	}
- })
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $.ajax({
+        type: "POST",
+        url: 'http://kgichan1.cafe24.com/kostaShow.php',
+        dataType: 'json',
+        success: function(datas) {
+          var num = 0;
+          console.log(datas);
+          for (var i of datas) {
+            var html = "<h3>" + i.title + "</h3>";
+            html += '<div class="board-data">'
+            html += "작성시간:" + i.time + '<br>' + "내용:" + i.contents;
+            html += "</div>"
+            $('#accordion').append(html);
+          }
+          $("#accordion").accordion();
+        }
+      })
 
- }) 
-</script>
+    })
+  </script>
 </head>
+
 <body>
-	<div class="topbar-wrap">
+  <div class="topbar-wrap">
 		<div class='topbar'>
 			<div class='side-menu'>
-				<a href="#">마이페이지</a> <a href="#">사이트맵</a> <a href="#">Contact
-					Us</a>
+				<a href="mypage.html">마이페이지</a> <a href="#">사이트맵</a> <a href="contact.html">Contact Us</a>
 			</div>
 			<div class=logo-wrap>
 				<div class='logo'>
@@ -155,11 +152,21 @@ dataType: 'json',
 				</div>
 				<div class="menu">
 					<ul>
-						<li><a href="#">회사소개</a></li>
-						<li><a href="#">회사 연혁</a></li>
-						<li><a href="#">제품소개</a></li>
-						<li><a href="#">고객센터</a></li>
-						<li><a href="#">채용안내</a></li>
+						<li>
+							<a href="introduction.html">회사소개</a>
+						</li>
+						<li>
+							<a href="timeline.html">회사 연혁</a>
+						</li>
+						<li>
+							<a href="#">제품소개</a>
+						</li>
+						<li>
+							<a href="contact.html">고객센터</a>
+						</li>
+						<li>
+							<a href="#">채용안내</a>
+						</li>
 					</ul>
 				</div>
 			</div>
@@ -167,18 +174,18 @@ dataType: 'json',
 	</div>
 
 
+  <div class="area1">
+    <div class="공지사항">공지사항</div>
+  </div>
 
-	<div class="area1">
-		<div class="공지사항">공지사항</div>
-	</div>
+  <div class="board-wrap">
+    <div class='board'>
+      <div id="accordion">
 
-	<div class="board-wrap">
-		<div class='board'>
-			<div id="accordion">
-				
-			</div>
-		</div>
-	</div>
-	<div>
+      </div>
+    </div>
+  </div>
+  <div>
 </body>
+
 </html>

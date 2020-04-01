@@ -174,7 +174,7 @@ td{
 	vertical-align: middle;
 	cursor: pointer;
 	overflow: visible;
-	white-space: nowrap;	
+	white-space: nowrap;
 	font-size: 14px;
 	float: right;
 
@@ -197,7 +197,7 @@ td{
     margin-inline-end: 0px;
     clear: both;
     margin-top: 70px;
-    
+
 }
 
 .sc-info_aa{
@@ -232,23 +232,32 @@ td{
 </style>
 </head>
 <body>
-	<div class="topbar-wrap">
+  <div class="topbar-wrap">
 		<div class='topbar'>
 			<div class='side-menu'>
-				<a href="#">마이페이지</a> <a href="#">사이트맵</a> <a href="#">Contact
-					Us</a>
+				<a href="mypage.html">마이페이지</a> <a href="#">사이트맵</a> <a href="contact.html">Contact Us</a>
 			</div>
 			<div class=logo-wrap>
 				<div class='logo'>
-					<img src="logo.png" alt="" />무선통신
+					<img src="logo.png" alt="" />XX통신
 				</div>
 				<div class="menu">
 					<ul>
-						<li><a href="#">회사소개</a></li>
-						<li><a href="#">사업분야</a></li>
-						<li><a href="#">제품소개</a></li>
-						<li><a href="#">고객센터</a></li>
-						<li><a href="#">채용안내</a></li>
+						<li>
+							<a href="introduction.html">회사소개</a>
+						</li>
+						<li>
+							<a href="timeline.html">회사 연혁</a>
+						</li>
+						<li>
+							<a href="#">제품소개</a>
+						</li>
+						<li>
+							<a href="contact.html">고객센터</a>
+						</li>
+						<li>
+							<a href="#">채용안내</a>
+						</li>
 					</ul>
 				</div>
 			</div>
@@ -264,8 +273,8 @@ td{
 		<div class="sc-thead">
 			<h2 class="sc-h2">문의정보</h2>
 		</div>
-	
-	<div class="sc-wrap">		
+
+	<div class="sc-wrap">
 		<div class="sc-table">
 			<form>
 				<table>
@@ -284,17 +293,17 @@ td{
 						</tr>
 						<tr class="contents">
 							<th scope="row" class="cjfals"><label> 문의내용</label></th>
-							<td><span class="input_txt"><input type="text" class="inp" 
+							<td><span class="input_txt"><input type="text" class="inp"
 								name='contents'	placeholder="문의하실 내용을 입력해 주세요.">
 								</span></td>
 						</tr>
 					</tbody>
 				</table>
 				<input type="submit" class="btn" value="저장">
-			</form>	
+			</form>
 		</div>
 		</div>
-		
+
 		<div class="sc-info">
 			<div id = "rlcks">
 				<p><img id="c-img" src="https://media.istockphoto.com/vectors/phone-icon-vector-illustration-call-center-app-telephone-icons-trendy-vector-id1159701264">
@@ -308,7 +317,7 @@ td{
 			</div>
 		</div>
 	</div>
-	
+
 <script type="text/javascript">
 
 	$(function() {
@@ -321,12 +330,12 @@ td{
 				success : function(data) {
 					alert('성공적으로 저장 되었습니다.')
 					window.location.reload()
-				} 
+				}
 			});
 			return false;
 		})
 	});
-    
+
 </script>
 </body>
 </html>

@@ -353,11 +353,12 @@
 		</div>
 
 		<div class="slide-arrow prev-arrow">
-			< </div>
+			<
+		</div>
 
-				<div class="slide-arrow next-arrow">
-					>
-				</div>
+		<div class="slide-arrow next-arrow">
+			>
+		</div>
 	</section>
 
 	<section class='section-board'>
@@ -425,57 +426,45 @@
 				autoplay: true,
 				autoplaySpeed: 2000,
 			});
-			// $.ajax({
-			// 	type: "POST",
-			// 	url: 'http://kgichan1.cafe24.com/LoginRequest.php',
-			// 	data: {
-			// 		userId: 'woo',
-			// 		userPassword: '1234'
-			// 	},footer
 
-			// 	success: function(data) {
-			// 		console.log(data)
-			// 	},
-			// 	dataType: 'json'
-			// });
-			// $.ajax({
-			// 	type: "POST",
-			// 	url: 'http://kgichan1.cafe24.com/showBoardKosta.php',
-			// 	dataType: 'json',
-			// 	success: function(datas) {
-			// 		var num = 0;
-			// 		console.log(datas);
-			// 		for (var i of datas) {
-			// 			if (++num == 10) {
-			// 				break;
-			// 			}
-			// 			var html = '<div class="board-data">'
-			// 			html += i.content;
-			// 			html += "</div>"
-			// 			$('.board').append(html);
-			// 		}
-			// 	}
-			// })
-			//
-			// $.ajax({
-			// 	type: "POST",
-			// 	url: 'http://kgichan1.cafe24.com/kostaCatalog.php',
-			// 	dataType: 'json',
-			// 	success: function(datas) {
-			// 		var num = 0;
-			// 		console.log(datas);
-			// 		for (var i of datas) {
-			// 			if (++num == 10) {
-			// 				break;
-			// 			}
-			// 			var html = '<div class="board-data">'
-			// 			html += '제품명: ' + i.name;
-			// 			html += ', 효과: ' + i.desc;
-			// 			html += "</div>"
-			// 			$('.catalog').append(html);
-			// 		}
-			// 	}
-			// })
+			$.ajax({
+				type: "POST",
+				url: 'http://kgichan1.cafe24.com/showBoardKosta.php',
+				dataType: 'json',
+				success: function(datas) {
+					var num = 0;
+					console.log(datas);
+					for (var i of datas) {
+						if (++num == 10) {
+							break;
+						}
+						var html = '<div class="board-data">'
+						html += i.content;
+						html += "</div>"
+						$('.board').append(html);
+					}
+				}
+			})
+
+			$.ajax({
+				type: "POST",
+				url: 'http://kgichan1.cafe24.com/kostaCatalog.php',
+				dataType: 'json',
+				success: function(datas) {
+					var num = 0;
+					console.log(datas);
+					for (var i of datas) {
+						if (++num == 10) {
+							break;
+						}
+						var html = '<div class="board-data">'
+						html += '제품명: ' + i.name;
+						html += ', 효과: ' + i.desc;
+						html += "</div>"
+						$('.catalog').append(html);
+					}
+				}
+			})
 		});
 	</script>
 </body>
